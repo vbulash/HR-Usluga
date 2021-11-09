@@ -1,0 +1,119 @@
+/* Main */
+.user-name {
+    color: var(--white);
+}
+
+.role-name {
+    color: var(--gray);
+    white-space: normal;
+}
+
+/* DataTables */
+.dataTables_length {
+    float: left;
+}
+
+.dataTables_filter {
+    float: right;
+}
+
+.dataTables_info {
+    float: left;
+}
+
+.dataTables_paginate {
+    float: right;
+    padding-top: 0.85em;
+}
+
+.paginate_button {
+    margin-right: 0.85em;
+}
+
+.paginate_button.next {
+    margin-right: 0;
+}
+
+.licenses_statistics tr {
+    padding-bottom: 10px;
+}
+
+td {
+    word-break: break-all;
+}
+
+td.key {
+    padding-right: 10px;
+}
+
+td.value {
+    font-weight: bold;
+}
+
+tr.locked {
+    background-color: lightgray;
+}
+
+tr.draft {
+    color: var(--red);
+}
+
+sup.required-mark {
+    color: var(--red);
+}
+
+.image-clear {
+    display: none;
+}
+
+.image-file {
+    outline: none;
+}
+
+.image-preview {
+    width: 200px;
+    height: 200px;
+}
+
+.logo-preview {
+    width: 64px;
+    height: 64px;
+}
+
+.thumb-row {
+    max-width: 40px;
+    max-height: 40px;
+    margin-right: 1em;
+}
+
+.tab-content {
+    min-height: 60vh;
+}
+
+.nav-link {
+    text-align: left;
+}
+
+#ident-area {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.ident-group {
+    width: 300px;
+}
+
+.no-sets {
+    width: 75%;
+}
+
+@media (min-width: 768px) {
+    .main-sidebar, .main-sidebar::before {
+        width: 300px;
+    }
+
+    body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
+        margin-left: 300px;
+    }
+}
