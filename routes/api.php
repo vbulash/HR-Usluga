@@ -17,9 +17,4 @@
     // Утилиты
     Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::get('/get.password', 'HelperController@generatePassword')->name('api.get.password');
-        Route::get('/get.block.typename/{type}', 'Admin\BlockController@getTypeName')->name('api.get.block.typename');
-        // Оплата
-        Route::get('/payment.result', 'PlayerController@paymentResult')->name('payment.result');
-        Route::get('/payment.success', 'PlayerController@paymentSuccess')->name('payment.success');
-        Route::get('/payment.fail', 'PlayerController@paymentFail')->name('payment.fail');
     });

@@ -42,108 +42,6 @@
             {{--                </div>--}}
             {{--            </div>--}}
         </form>
-
-        <!-- Right navbar links -->
-        {{--        <ul class="navbar-nav ml-auto">--}}
-        {{--            <!-- Messages Dropdown Menu -->--}}
-        {{--            <li class="nav-item dropdown">--}}
-        {{--                <a class="nav-link" data-toggle="dropdown" href="#">--}}
-        {{--                    <i class="far fa-comments"></i>--}}
-        {{--                    <span class="badge badge-danger navbar-badge">3</span>--}}
-        {{--                </a>--}}
-        {{--                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">--}}
-        {{--                    <a href="#" class="dropdown-item">--}}
-        {{--                        <!-- Message Start -->--}}
-        {{--                        <div class="media">--}}
-        {{--                            <img src="{{ asset('assets/admin/img/user1-128x128.jpg') }}" alt="User Avatar"--}}
-        {{--                                 class="img-size-50 mr-3 img-circle">--}}
-        {{--                            <div class="media-body">--}}
-        {{--                                <h3 class="dropdown-item-title">--}}
-        {{--                                    Brad Diesel--}}
-        {{--                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>--}}
-        {{--                                </h3>--}}
-        {{--                                <p class="text-sm">Call me whenever you can...</p>--}}
-        {{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                        <!-- Message End -->--}}
-        {{--                    </a>--}}
-        {{--                    <div class="dropdown-divider"></div>--}}
-        {{--                    <a href="#" class="dropdown-item">--}}
-        {{--                        <!-- Message Start -->--}}
-        {{--                        <div class="media">--}}
-        {{--                            <img src="{{ asset('assets/admin/img/user8-128x128.jpg') }}" alt="User Avatar"--}}
-        {{--                                 class="img-size-50 img-circle mr-3">--}}
-        {{--                            <div class="media-body">--}}
-        {{--                                <h3 class="dropdown-item-title">--}}
-        {{--                                    John Pierce--}}
-        {{--                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>--}}
-        {{--                                </h3>--}}
-        {{--                                <p class="text-sm">I got your message bro</p>--}}
-        {{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                        <!-- Message End -->--}}
-        {{--                    </a>--}}
-        {{--                    <div class="dropdown-divider"></div>--}}
-        {{--                    <a href="#" class="dropdown-item">--}}
-        {{--                        <!-- Message Start -->--}}
-        {{--                        <div class="media">--}}
-        {{--                            <img src="{{ asset('assets/admin/img/user3-128x128.jpg') }}" alt="User Avatar"--}}
-        {{--                                 class="img-size-50 img-circle mr-3">--}}
-        {{--                            <div class="media-body">--}}
-        {{--                                <h3 class="dropdown-item-title">--}}
-        {{--                                    Nora Silvester--}}
-        {{--                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>--}}
-        {{--                                </h3>--}}
-        {{--                                <p class="text-sm">The subject goes here</p>--}}
-        {{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                        <!-- Message End -->--}}
-        {{--                    </a>--}}
-        {{--                    <div class="dropdown-divider"></div>--}}
-        {{--                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>--}}
-        {{--                </div>--}}
-        {{--            </li>--}}
-        {{--            <!-- Notifications Dropdown Menu -->--}}
-        {{--            <li class="nav-item dropdown">--}}
-        {{--                <a class="nav-link" data-toggle="dropdown" href="#">--}}
-        {{--                    <i class="far fa-bell"></i>--}}
-        {{--                    <span class="badge badge-warning navbar-badge">15</span>--}}
-        {{--                </a>--}}
-        {{--                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">--}}
-        {{--                    <span class="dropdown-item dropdown-header">15 Notifications</span>--}}
-        {{--                    <div class="dropdown-divider"></div>--}}
-        {{--                    <a href="#" class="dropdown-item">--}}
-        {{--                        <i class="fas fa-envelope mr-2"></i> 4 new messages--}}
-        {{--                        <span class="float-right text-muted text-sm">3 mins</span>--}}
-        {{--                    </a>--}}
-        {{--                    <div class="dropdown-divider"></div>--}}
-        {{--                    <a href="#" class="dropdown-item">--}}
-        {{--                        <i class="fas fa-users mr-2"></i> 8 friend requests--}}
-        {{--                        <span class="float-right text-muted text-sm">12 hours</span>--}}
-        {{--                    </a>--}}
-        {{--                    <div class="dropdown-divider"></div>--}}
-        {{--                    <a href="#" class="dropdown-item">--}}
-        {{--                        <i class="fas fa-file mr-2"></i> 3 new reports--}}
-        {{--                        <span class="float-right text-muted text-sm">2 days</span>--}}
-        {{--                    </a>--}}
-        {{--                    <div class="dropdown-divider"></div>--}}
-        {{--                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>--}}
-        {{--                </div>--}}
-        {{--            </li>--}}
-        {{--            <li class="nav-item">--}}
-        {{--                <a class="nav-link" data-widget="fullscreen" href="#" role="button">--}}
-        {{--                    <i class="fas fa-expand-arrows-alt"></i>--}}
-        {{--                </a>--}}
-        {{--            </li>--}}
-        {{--            <li class="nav-item">--}}
-        {{--                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">--}}
-        {{--                    <i class="fas fa-th-large"></i>--}}
-        {{--                </a>--}}
-        {{--            </li>--}}
-        {{--        </ul>--}}
     </nav>
     <!-- /.navbar -->
 
@@ -196,157 +94,14 @@
                         </a>
                     </li>
 
-                    <!-- Сотрудники -->
+                    <!-- Пользователи -->
                     <li class="nav-item">
                         <a href="{{ route('users.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-id-card"></i>
                             <p>Пользователи</p>
                         </a>
                     </li>
-                    <!-- .Сотрудники -->
-
-                    <!-- Клиенты -->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-building"></i>
-                            <p>Клиенты
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('clients.index') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-building"></i>
-                                    <p>Клиенты</p>
-                                </a>
-                            </li>
-                            {{--                            <li class="nav-item">--}}
-                            {{--                                <a href="#" class="nav-link"> --}}{{-- route('contracts.index') --}}
-                            {{--                                    <i class="nav-icon fas fa-file-signature"></i>--}}
-                            {{--                                    <p>Контракты</p>--}}
-                            {{--                                </a>--}}
-                            {{--                            </li>--}}
-                        </ul>
-                    </li>
-                    <!-- .Клиенты -->
-
-                    <!-- Конструктор тестов -->
-                    <li class="nav-item has-treeview">
-                        <a href="javascript:void(0)" class="nav-link">
-                            <i class="nav-icon fas fa-drafting-compass"></i>
-                            <p>Конструктор тестов
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('sets.index') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-question-circle"></i>
-                                    <p>Наборы вопросов</p>
-                                </a>
-                            </li>
-
-                            <!-- Описания ФМП -->
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="nav-icon fas fa-drafting-compass"></i>
-                                <p>Описания ФМП
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav-item has-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('fmptypes.index') }}" class="nav-link">
-                                        <i class="nav-icon fas fa-file-alt"></i>
-                                        <p>Типы описаний</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('neuroprofiles.index') }}" class="nav-link">
-                                        <i class="nav-icon fas fa-file-alt"></i>
-                                        <p>Нейропрофили</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('blocks.index') }}" class="nav-link">
-                                        <i class="nav-icon fas fa-file-alt"></i>
-                                        <p>Блоки описаний</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- .Описания ФМП -->
-
-                            <li class="nav-item">
-                                <a href="{{ route('tests.index') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-drafting-compass"></i>
-                                    <p>Тесты</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- .Конструктор тестов -->
-
-                    <!-- Прохождение тестов -->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-play-circle"></i>
-                            <p>Прохождение тестов
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                {{-- TODO: сделать нормальный вызов после отладки --}}
-                                <a href="{{ route('player.play', [
-                                    'mkey' => 'mkey_60501e2ae282a2.08095650*2427387986',
-                                    'test' => 'test_60cf61faa26899.54714870'
-                                ]) }}"
-                                   class="nav-link">
-                                    <i class="nav-icon fas fa-play-circle"></i>
-                                    <p>Проверочный плеер</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('history.index') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-file-video"></i>
-                                    <p>История прохождения</p>
-                                </a>
-                            </li>
-                            {{--                            <li class="nav-item">--}}
-                            {{--                                <a href="{{ route('player.iframe') }}" class="nav-link">--}}
-                            {{--                                    <i class="nav-icon fas fa-window-maximize"></i>--}}
-                            {{--                                    <p>Тест IFrame</p>--}}
-                            {{--                                </a>--}}
-                            {{--                            </li>--}}
-                            {{--                            <li class="nav-item">--}}
-                            {{--                                <a href="{{ route('player.mail', ['history_id' => '27']) }}" class="nav-link">--}}
-                            {{--                                    <i class="nav-icon fas fa-envelope-open"></i>--}}
-                            {{--                                    <p>Тест почты</p>--}}
-                            {{--                                </a>--}}
-                            {{--                            </li>--}}
-                        </ul>
-                    </li>
-                    <!-- .Прохождение тестов -->
-
-                    <!-- Настройки -->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-cogs"></i>
-                            <p>Настройки
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('roles.index') }}"
-                                   class="nav-link">
-                                    <i class="nav-icon fas fa-mask"></i>
-                                    <p>Роли</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- .Настройки -->
-
+                    <!-- .Пользователи -->
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -413,7 +168,7 @@
         cluster: '{{ env('PUSHER_APP_CLUSTER') }}'
     });
 
-    var channel = pusher.subscribe('neurotest-channel');
+    var channel = pusher.subscribe('hgrusluga-channel');
     channel.bind('toast-event', (data) => {
         toastr[data.type](data.message, data.title);
     });

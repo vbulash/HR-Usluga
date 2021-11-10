@@ -26,8 +26,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'confirmed',
-            'phone' => 'required'
+            'password' => 'confirmed'
         ];
     }
 
@@ -36,9 +35,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => 'ФИО',
             'email' => 'Электронная почта',
-            'password' => 'Пароль',
-            'phone' => 'Телефон',
-            'roles' => 'Роли'
+            'password' => 'Пароль'
         ];
     }
 }

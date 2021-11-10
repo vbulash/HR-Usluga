@@ -35,7 +35,7 @@ class TestActionsEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['neurotest-channel'];
+        return ['hrusluga-channel'];
     }
 
     public function broadcastAs()

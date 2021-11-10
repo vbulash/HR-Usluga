@@ -1,11 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "vbulash/hr-usluga",
     "type": "project",
-    "description": "Платформа нейротестирования",
+    "description": "HR-Услуга",
     "keywords": [
         "framework",
         "laravel",
-        "neurotest"
+        "hr-usluga"
     ],
     "license": "MIT",
     "require": {
@@ -19,12 +19,9 @@
         "laravel-lang/lang": "~7.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "phpoffice/phpspreadsheet": "^1.18",
         "predis/predis": "^1.1",
         "pusher/pusher-php-server": "^7.0",
-        "spatie/laravel-activitylog": "^3.17",
         "spatie/laravel-menu": "^3.7",
-        "spatie/laravel-permission": "^4.0",
         "spatie/laravel-sluggable": "^2.6",
         "yajra/laravel-datatables": "^1.5"
     },

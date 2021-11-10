@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\UserClientsRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreUserRequest extends FormRequest
@@ -27,10 +26,7 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed',
-            'phone' => 'required',
-            'roles' => 'required',
-            'clients' => new UserClientsRule($this)
+            'password' => 'required|confirmed'
         ];
     }
 
@@ -39,9 +35,7 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'ФИО',
             'email' => 'Электронная почта',
-            'password' => 'Пароль',
-            'phone' => 'Телефон',
-            'roles' => 'Роли'
+            'password' => 'Пароль'
         ];
     }
 }

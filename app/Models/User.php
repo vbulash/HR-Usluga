@@ -15,7 +15,7 @@ use Spatie\Permission\Traits\HasRoles;
  */
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles, LogsActivity;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -25,8 +25,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
-        'phone'
+        'password'
     ];
 
     /**
@@ -47,22 +46,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    protected static $logAttributes = ['*'];
-
-    public function getDescriptionForEvent(string $eventName): string
-    {
-        return "Событие изменения пользователя: {$eventName}";
-    }
-
-    // Внешние связи
-    public function licenses()
-    {
-        return $this->hasMany(License::class);
-    }
-
-    public function clients()
-    {
-        return $this->belongsToMany(Client::class, 'user_client');
-    }
 }
