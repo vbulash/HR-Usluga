@@ -5,10 +5,6 @@
     </div>
     <div class="info">
         <a href="javascript:void(0);" class="d-block">{{ Illuminate\Support\Facades\Auth::user()->name }}</a>
-        @php
-            $roles = \Illuminate\Support\Facades\Auth::user()->getRoleNames()->join(",<br/>");
-        @endphp
-        <p class="role-name">{!! $roles !!}</p>
         <a href="{{ route('logout') }}" class="d-block">
             <i class="fas fa-sign-out-alt"></i>
             Выход

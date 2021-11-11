@@ -8,12 +8,6 @@
                 <div class="col-sm-6">
                     <h1>Пользователи</h1>
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Blank Page</li>
-                    </ol>
-                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -41,9 +35,6 @@
                                             <th style="width: 30px">#</th>
                                             <th>ФИО</th>
                                             <th>Электронная почта</th>
-                                            <th>Телефон</th>
-                                            <th>Роли</th>
-                                            <th>Работа с клиентами</th>
                                             <th>Действия</th>
                                         </tr>
                                         </thead>
@@ -93,17 +84,6 @@
                         {data: 'id', name: 'id', responsivePriority: 1},
                         {data: 'name', name: 'name', responsivePriority: 1},
                         {data: 'email', name: 'email', responsivePriority: 2},
-                        {data: 'phone', name: 'phone', responsivePriority: 2},
-                        {
-                            data: 'roles', name: 'roles', responsivePriority: 3, render: (data) => {
-                                return data.join(",<br/>");
-                            }
-                        },
-                        {
-                            data: 'clients', name: 'clients', sortable: false, responsivePriority: 4, render: (data) => {
-                                return data.join(",<br/>");
-                            }
-                        },
                         {data: 'action', name: 'action', sortable: false, responsivePriority: 1, className: 'no-wrap dt-actions'}
                     ]
                 });
