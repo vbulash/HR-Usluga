@@ -21,8 +21,8 @@
         "laravel/tinker": "^2.5",
         "predis/predis": "^1.1",
         "pusher/pusher-php-server": "^7.0",
-        "spatie/laravel-menu": "^3.7",
         "spatie/laravel-sluggable": "^2.6",
+        "spatie/menu": "^3.0",
         "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {

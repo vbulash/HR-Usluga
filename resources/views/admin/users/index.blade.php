@@ -23,13 +23,12 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            @can('users.create')
-                                <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Добавить
-                                    пользователя</a>
-                            @endcan
+                            <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Добавить
+                                пользователя</a>
                             @if (count($users))
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hover text-nowrap" id="users_table" style="width: 100%;">
+                                    <table class="table table-bordered table-hover text-nowrap" id="users_table"
+                                           style="width: 100%;">
                                         <thead>
                                         <tr>
                                             <th style="width: 30px">#</th>
@@ -84,7 +83,13 @@
                         {data: 'id', name: 'id', responsivePriority: 1},
                         {data: 'name', name: 'name', responsivePriority: 1},
                         {data: 'email', name: 'email', responsivePriority: 2},
-                        {data: 'action', name: 'action', sortable: false, responsivePriority: 1, className: 'no-wrap dt-actions'}
+                        {
+                            data: 'action',
+                            name: 'action',
+                            sortable: false,
+                            responsivePriority: 1,
+                            className: 'no-wrap dt-actions'
+                        }
                     ]
                 });
             });

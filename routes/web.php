@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Log;
+//use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route as Route;
 
 /*
@@ -19,14 +19,14 @@ Route::redirect('/', '/admin')->name('home');
 
 // Маршруты объектов платформы
 Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'admin'], function () {
+	// Главная
     Route::get('/', 'MainController@index')->name('admin.index');
-});
-
-// Безопасность
-Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'auth'], function () {
     // Пользователи
     Route::resource('/users', 'UserController');
     Route::get('/users.data', 'UserController@getData')->name('users.index.data');
+	// Записи блога
+	Route::resource('/blog', 'BlogController');
+	Route::get('/blog.data', 'BlogController@getData')->name('blog.index.data');
 });
 
 // Аутентификация

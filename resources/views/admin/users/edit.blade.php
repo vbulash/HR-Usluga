@@ -12,12 +12,6 @@
                             Редактирование
                         @endif пользователя &laquo;{{ $user->name }}&raquo;</h1>
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Blank Page</li>
-                    </ol>
-                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -51,13 +45,6 @@
                                         <input type="email" name="email" id="email"
                                                class="form-control @error('email') is-invalid @enderror"
                                                value="{{ $user->email }}"
-                                               @if($show) disabled @endif>
-                                    </div>
-                                    <div class="form-group col-6 col-xs-12">
-                                        <label for="phone">Телефон</label>
-                                        <input type="tel" name="phone" id="phone"
-                                               class="form-control @error('phone') is-invalid @enderror"
-                                               value="{{ $user->phone }}"
                                                @if($show) disabled @endif>
                                     </div>
                                 </div>
@@ -95,35 +82,13 @@
                                         </div>
                                     </div>
                                 @endif
-                                <div class="form-group">
-                                    <label for="roles">Роли</label>
-                                    <select name="roles[]" id="roles"
-                                            class="select2 @error('roles') is-invalid @enderror" multiple="multiple"
-                                            style="width: 100%;" @if($show) disabled @endif>
-                                        @foreach($roles as $role)
-                                            <option
-                                                @if(in_array($role, $user_roles->all())) selected @endif>{{ $role }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="clients">Клиенты</label>
-                                    <p>Пользователь будет иметь доступ только к клиентам, указанным ниже.<br/>
-                                        Для этого пользователь должен иметь соответствующую роль или роли</p>
-                                    <select name="clients[]" id="clients"
-                                            class="select2 @error('clients') is-invalid @enderror" multiple="multiple"
-                                            style="width: 100%;" @if($show) disabled @endif>
-                                        @foreach($clients as $id => $name)
-                                            <option
-                                                @if(array_key_exists($id, $user_clients->toArray())) selected @endif value="{{ $id }}">{{ $name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                                @if(!$show)
+                                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                                @endif
                             </div>
                         </form>
 

@@ -44,6 +44,9 @@ mix.copy('resources/assets/admin/plugins/jquery/jquery.min.js.map', 'public/asse
 mix.copy('resources/assets/admin/css/adminlte.min.css.map', 'public/assets/admin/css/adminlte.min.css.map');
 mix.copy('resources/assets/admin/js/adminlte.min.js.map', 'public/assets/admin/js/adminlte.min.js.map');
 
+// Favicon
+mix.copyDirectory('resources/assets/favicon', 'public');
+
 // Bootstrap
 mix.copy('resources/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js.map', 'public/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js.map');
 mix.copy('resources/assets/admin/plugins/bootstrap/css/bootstrap.min.css.map', 'public/assets/admin/plugins/bootstrap/css/bootstrap.min.css.map');

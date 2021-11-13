@@ -166,7 +166,6 @@
              * Package Service Providers...
              */
             Yajra\Datatables\DatatablesServiceProvider::class,
-            Spatie\Menu\Laravel\MenuServiceProvider::class,
             Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
             /*
@@ -230,7 +229,6 @@
             'Validator' => Illuminate\Support\Facades\Validator::class,
             'View' => Illuminate\Support\Facades\View::class,
             'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-            'Menu' => Spatie\Menu\Laravel\Facades\Menu::class,
         ],
 
     ];

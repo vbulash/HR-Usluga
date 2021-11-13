@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Models\Client;
-use App\Models\Role;
 use App\Models\User;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -27,20 +25,18 @@ class UserController extends Controller
      * @return JsonResponse
      * @throws Exception
      */
-    public function getData()
-    {
+    public function getData(): JsonResponse
+	{
         return Datatables::of(User::all())
             ->addColumn('action', function ($user) {
                 $editRoute = route('users.edit', ['user' => $user->id]);
                 $showRoute = route('users.show', ['user' => $user->id]);
-                $action = '';
+				$action = "<a href=\"$editRoute\" class=\"btn btn-info btn-sm float-left mr-1\" " .
+					"data-toggle=\"tooltip\" data-placement=\"top\" title=\"Редактирование\">\n" .
+					"<i class=\"fas fa-pencil-alt\"></i>\n" .
+					"</a>\n";
                 $action .=
-                    "<a href=\"{$editRoute}\" class=\"btn btn-info btn-sm float-left mr-1\" " .
-                    "data-toggle=\"tooltip\" data-placement=\"top\" title=\"Редактирование\">\n" .
-                    "<i class=\"fas fa-pencil-alt\"></i>\n" .
-                    "</a>\n";
-                $action .=
-                    "<a href=\"{$showRoute}\" class=\"btn btn-info btn-sm float-left mr-1\" " .
+                    "<a href=\"$showRoute\" class=\"btn btn-info btn-sm float-left mr-1\" " .
                     "data-toggle=\"tooltip\" data-placement=\"top\" title=\"Просмотр\">\n" .
                     "<i class=\"fas fa-eye\"></i>\n" .
                     "</a>\n";
@@ -49,14 +45,14 @@ class UserController extends Controller
             ->make(true);
     }
 
-    public function index()
-    {
+    public function index(): Factory|View|Application
+	{
         $users = User::all();
         return view('admin.users.index', compact('users'));
     }
 
-    public function create()
-    {
+    public function create(): Factory|View|Application
+	{
         return view('admin.users.create');
     }
 
@@ -71,18 +67,18 @@ class UserController extends Controller
         $user = User::create($data);
         $user->save();
 
-        session()->flash('success', "Пользователь \"{$user->name}\" зарегистрирован");
+        session()->flash('success', "Пользователь \"$user->name\" зарегистрирован");
         return redirect()->route('users.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function show(int $id)
-    {
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param int $id
+	 * @return View|Factory|Response|Application
+	 */
+    public function show(int $id): View|Factory|Response|Application
+	{
         return $this->edit($id, true);
     }
 
@@ -93,8 +89,8 @@ class UserController extends Controller
      * @param bool $show
      * @return Application|Factory|View|Response
      */
-    public function edit(int $id, bool $show = false)
-    {
+    public function edit(int $id, bool $show = false): View|Factory|Response|Application
+	{
         $user = User::findOrFail($id);
         return view('admin.users.edit', compact('user', 'show'));
     }
@@ -106,8 +102,8 @@ class UserController extends Controller
      * @param int $id
      * @return RedirectResponse|Response
      */
-    public function update(UpdateUserRequest $request, int $id)
-    {
+    public function update(UpdateUserRequest $request, int $id): Response|RedirectResponse
+	{
         $data = $request->all();
         if ($data['password'] == null) {
             unset($data['password']);
@@ -123,20 +119,20 @@ class UserController extends Controller
         if ($changed) {
             // TODO: Отправить письмо
             session()->flash('success',
-                "Изменения пользователя &laquo;{$original}&raquo; сохранены<br/>" .
-                "Письмо пользователю &laquo;{$original}&raquo; отправлено");
+                "Изменения пользователя &laquo;$original&raquo; сохранены<br/>" .
+                "Письмо пользователю &laquo;$original&raquo; отправлено");
         }
 
         return redirect()->route('users.index');
     }
 
-    public function loginForm()
-    {
+    public function loginForm(): Factory|View|Application
+	{
         return view('users.login');
     }
 
-    public function login(Request $request)
-    {
+    public function login(Request $request): RedirectResponse
+	{
         $request->validate([
             'email' => 'required|email',
             'password' => 'required'
@@ -154,8 +150,8 @@ class UserController extends Controller
         }
     }
 
-    public function logout()
-    {
+    public function logout(): RedirectResponse
+	{
         Auth::logout();
         return redirect()->route('login.create');
     }

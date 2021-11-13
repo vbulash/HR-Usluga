@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/admin.css') }}">
+
+{{-- Генератор favicon: https://realfavicongenerator.net/ --}}
+<!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- .Favicon -->
+
     <!-- Page styles -->
     @stack('styles')
 </head>
@@ -59,50 +71,48 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
-                    data-accordion="false">
-                    <!-- Spatie menu -->
+                <!-- Spatie menu -->
                 @php
-                    use Spatie\Menu\Laravel\Menu;
-                    Menu::macro('main', function() {
-                        return Menu::new()
-                            ->route('admin.index', 'Главная')
-                            ->route('users.index', 'Пользователи')
-                            ->route('clients.index', 'Клиенты')
-                            ->setActiveFromRequest()
-                            ->submenu('Конструктор тестов', function (Menu $menu) {
-                            	$menu
-                                    ->link('/your-first-menu', 'Your First Menu')
-                                    ->link('/working-with-items', 'Working With Items')
-                                    ->link('/adding-sub-menus', 'Adding Sub Menus')
-                                    ->submenu('Описания ФМП', function (Menu $menu) {
-                                        $menu
-                                            ->link('/your-first-menu', 'Типы описаний')
-                                            ->link('/working-with-items', 'Нейропрофили')
-                                            ->link('/adding-sub-menus', 'Блоки описаний');
-                                    });
-                            });
-                    });
+                    use Spatie\Menu\Menu;
+                    use Spatie\Menu\Link;
+                    $menu = Menu::new()
+                            ->addClass('nav nav-pills nav-sidebar flex-column nav-child-indent')
+                            ->setAttribute('data-widget', 'treeview')
+                            ->setAttribute('role', 'menu')
+                            ->setAttribute('data-accordion', 'false')
+                            // Элементы
+                            ->add(Link::to(route('admin.index'), '<i class="nav-icon fas fa-home"></i> Главная')
+                                ->addParentClass('nav-item')
+                                ->addClass('nav-link')
+                                ->setActive())
+                            ->add(Link::to(route('users.index'), '<i class="nav-icon fas fa-id-card"></i> Пользователи')
+                                ->addParentClass('nav-item')
+                                ->addClass('nav-link'))
+                            ->add(Link::to(route('users.index'), '<i class="nav-icon fas fa-file-alt"></i> Блог')
+                                ->addParentClass('nav-item')
+                                ->addClass('nav-link'));
                 @endphp
-                {{--                {!! \Spatie\Menu\Laravel\Menu::main() !!}--}}
+{{--                {!! $menu->render(); !!}--}}
                 <!-- .Spatie menu -->
 
-                    <li class="nav-item">
-                        <a href="{{ route('admin.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-home"></i>
-                            <p>Главная</p>
-                        </a>
-                    </li>
-
-                    <!-- Пользователи -->
-                    <li class="nav-item">
-                        <a href="{{ route('users.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-id-card"></i>
-                            <p>Пользователи</p>
-                        </a>
-                    </li>
-                    <!-- .Пользователи -->
-                </ul>
+				<ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
+					data-accordion="false">
+					@php
+						$menu = [
+							['icon' => 'fas fa-home', 'title' => 'Главная', 'route' => 'admin.index'],
+							['icon' => 'fas fa-id-card', 'title' => 'Пользователи', 'route' => 'users.index'],
+							['icon' => 'fas fa-file-alt', 'title' => 'Блог', 'route' => 'admin.index']
+						];
+					@endphp
+					@foreach($menu as $item)
+						<li class="nav-item">
+							<a href="{{ route($item['route']) }}" class="nav-link">
+								<i class="nav-icon {{ $item['icon'] }}"></i>
+								{{ $item['title'] }}
+							</a>
+						</li>
+					@endforeach
+				</ul>
             </nav>
             <!-- /.sidebar-menu -->
         </div>
@@ -153,7 +163,7 @@
         return this.replace(new RegExp("[" + charlist + "]+$"), "");
     };
 
-    $(`.nav-sidebar a`).each(function () {
+    $('.nav-sidebar a').each(function () {
         let location = window.location.protocol + '//' + window.location.host + window.location.pathname;
         let link = this.href;
         //let cleared = link.trimRight("#");
@@ -192,7 +202,7 @@
     @endphp
         @endif
 
-    @if (session()->has('info'))
+        @if (session()->has('info'))
         toastr['success']("{!! session('info') !!}");
     @php
         session()->forget('info');
