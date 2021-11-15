@@ -20,7 +20,8 @@ class CreateBlogsTable extends Migration
             $table->mediumText('digest');
             $table->string('image')->nullable();
             $table->longText('description');
-            $table->timestamps();
+			$table->date('publish');
+			$table->timestamps();
         });
     }
 

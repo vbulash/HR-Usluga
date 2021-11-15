@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogPost extends Migration
+class FileLink extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateBlogPost extends Migration
      */
     public function up()
     {
-        Schema::create('blog_tag', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('blog_id')->unsigned();
-            $table->bigInteger('tag_id')->unsigned();
-            $table->timestamps();
+        Schema::create('filelinks', function (Blueprint $table) {
+			$table->id();
+			$table->string('filename')->unique();
+			$table->integer('linkcount')->default(1);
+			$table->timestamps();
         });
     }
 
@@ -28,6 +28,8 @@ class CreateBlogPost extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog_tag');
+        Schema::table('filelinks', function (Blueprint $table) {
+			Schema::dropIfExists('filelinks');
+        });
     }
 }

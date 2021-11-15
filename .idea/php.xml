@@ -149,9 +149,6 @@
       <path value="$PROJECT_DIR$/vendor/nette/utils" />
       <path value="$PROJECT_DIR$/vendor/nette/schema" />
       <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
-      <path value="$PROJECT_DIR$/vendor/spatie/macroable" />
-      <path value="$PROJECT_DIR$/vendor/spatie/menu" />
-      <path value="$PROJECT_DIR$/vendor/spatie/url" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

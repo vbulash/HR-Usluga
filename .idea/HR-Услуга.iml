@@ -44,9 +44,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/schema" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/serializable-closure" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/macroable" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/menu" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/url" />
       <excludePattern pattern=".DS_Store" />
     </content>
     <orderEntry type="inheritedJdk" />

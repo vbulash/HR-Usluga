@@ -71,37 +71,13 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <!-- Spatie menu -->
-                @php
-                    use Spatie\Menu\Menu;
-                    use Spatie\Menu\Link;
-                    $menu = Menu::new()
-                            ->addClass('nav nav-pills nav-sidebar flex-column nav-child-indent')
-                            ->setAttribute('data-widget', 'treeview')
-                            ->setAttribute('role', 'menu')
-                            ->setAttribute('data-accordion', 'false')
-                            // Элементы
-                            ->add(Link::to(route('admin.index'), '<i class="nav-icon fas fa-home"></i> Главная')
-                                ->addParentClass('nav-item')
-                                ->addClass('nav-link')
-                                ->setActive())
-                            ->add(Link::to(route('users.index'), '<i class="nav-icon fas fa-id-card"></i> Пользователи')
-                                ->addParentClass('nav-item')
-                                ->addClass('nav-link'))
-                            ->add(Link::to(route('users.index'), '<i class="nav-icon fas fa-file-alt"></i> Блог')
-                                ->addParentClass('nav-item')
-                                ->addClass('nav-link'));
-                @endphp
-{{--                {!! $menu->render(); !!}--}}
-                <!-- .Spatie menu -->
-
 				<ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
 					data-accordion="false">
 					@php
 						$menu = [
 							['icon' => 'fas fa-home', 'title' => 'Главная', 'route' => 'admin.index'],
 							['icon' => 'fas fa-id-card', 'title' => 'Пользователи', 'route' => 'users.index'],
-							['icon' => 'fas fa-file-alt', 'title' => 'Блог', 'route' => 'admin.index']
+							['icon' => 'fas fa-file-alt', 'title' => 'Блог', 'route' => 'blog.index']
 						];
 					@endphp
 					@foreach($menu as $item)
